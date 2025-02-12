@@ -5,6 +5,7 @@ services:
       args:
         - HOSTNAME=${HOSTNAME:?}
         - NETWORKS=${NETWORKS:?}
+        - TIMEZONE=${TIMEZONE:?}
     restart: unless-stopped
     tty: true
     ports:
