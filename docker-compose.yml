@@ -1,0 +1,12 @@
+services:
+  postfix:
+    build:
+      dockerfile: Dockerfile
+      args:
+        - HOSTNAME=${HOSTNAME:?}
+        - NETWORKS=${NETWORKS:?}
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "${PORT:?}:25"
+
