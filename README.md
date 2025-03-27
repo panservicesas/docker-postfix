@@ -14,6 +14,22 @@ TIMEZONE="Europe/Rome"
 ```bash
 docker compose up -d --build
 ```
+### Expose container to others networks
+
+```env
+...
+    networks:
+      - net1
+      - net2
+      - net3
+networks:
+  net1:
+    external: true
+  net2:
+    external: true
+  net3:
+    external: true
+```
 
 ### Using into Docker container
 
