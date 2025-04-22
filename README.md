@@ -3,17 +3,14 @@
 ### Docker compose ENV options
 
 ```dotenv
+COMPOSE_BAKE=true
+
 PORT="127.0.0.1:1025"
 HOSTNAME="panservice.it"
 NETWORKS="172.28.0.0/24"
 TIMEZONE="Europe/Rome"
 ```
 
-### Build container
-
-```bash
-docker compose up -d --build
-```
 ### Expose container to others networks
 
 ```env
@@ -29,6 +26,16 @@ networks:
     external: true
   net3:
     external: true
+```
+
+### Build and start container
+
+```bash
+docker compose build --no-cache postfix
+```
+
+```bash
+docker compose up -d
 ```
 
 ### Using into Docker container
